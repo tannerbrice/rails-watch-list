@@ -1,0 +1,25 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hbz-classic-movies-00-index-new-1591823486.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*);">
+  <div class="container">
+    <h1>Flick Picks </h1>
+    <p>A couple clicks for all your favorite flics!</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-between my-3">
+    <h2>My Lists</h2>
+    <%= link_to "create movie list", new_list_path, class: "btn btn-primary"%>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <%= link_to list_path(list) do %>
+          <div class='card list-card justify-content-center align-items-center'>
+            <h3><%= list.name %></h3>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
